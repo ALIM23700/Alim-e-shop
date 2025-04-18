@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
   const location = useLocation();
@@ -26,31 +24,29 @@ const Checkout = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.phone || !formData.address) {
-      toast.error("Please fill in all shipping details", { autoClose: 3000 });
+      alert("Please fill in all shipping details.");
       return;
     }
 
-    toast.success("🚚 Shipping information added!", { autoClose: 3000 });
+    alert("Shipping information added successfully!");
   };
 
   const handleSubmit = () => {
     if (!formData.name || !formData.email || !formData.phone || !formData.address) {
-      toast.error("Please fill in all shipping details", { autoClose: 3000 });
+      alert("Please fill in all shipping details.");
       return;
     }
 
     if (!paymentMethod) {
-      toast.error("Please select a payment method", { autoClose: 3000 });
+      alert("Please select a payment method.");
       return;
     }
 
-    toast.success(`✅ Order completed successfully! Total: ${total} Tk`, { autoClose: 3000 });
+    alert(`Order completed successfully!\nTotal: ${total} Tk`);
   };
 
   return (
     <div className='flex flex-col lg:flex-row justify-around p-5'>
-      <ToastContainer />
-
       {/* Shipping Info */}
       <div className='h-auto w-96 bg-black p-5 rounded'>
         <h1 className='text-white text-2xl font-bold text-center mb-5'>Shipping Information</h1>
