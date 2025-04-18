@@ -8,7 +8,12 @@ const Card = ({ product, addtocart}) => {
         <img src={img} className='w-full h-60 object-cover rounded-t-2xl'></img>
             <h1 className='text-black text-2xl'>{name}</h1>
             <h1 className='text-black text-xl'>price:{price}</h1>
-             <button className='bg-blue-900 p-2 text-white mt-5 ml-24 rounded hover:bg-black hover:text-white' onClick={()=>addtocart(product)}>add to cart</button>
+            <button
+        className="mt-4 bg-green-600 text-white px-4 py-2 rounded w-full hover:bg-green-800 transition"
+        onClick={() => addtocart(product)}
+      >
+        Add to Cart
+      </button>
         </div>
     </div>
   )
